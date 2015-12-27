@@ -25,6 +25,6 @@ docker-compose logs | grep curator
 ```
 
 ## Notes
-- You may want to add nginx container with configs HTTP Basic Auth for Kibana
+- You may want to add nginx container with HTTP Basic Auth config for Kibana
 - You can specify resource limits (like CPU and memory allocation) for each docker container
 - Feel free to contact me with any questions and issues
