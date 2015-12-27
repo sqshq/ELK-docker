@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/curator --host elasticsearch --port 9200 delete indices --older-than 2 --time-unit days --prefix filebeat --timestring '%Y.%m.%d'

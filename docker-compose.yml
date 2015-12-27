@@ -1,0 +1,30 @@
+elasticsearch:
+    image: elasticsearch:latest
+    restart: always
+    ports:
+      - 9200:9200
+    volumes:
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
+
+logstash:
+   build: logstash
+   restart: always
+   command: logstash -f /config-dir/logstash.conf
+   ports:
+     - 5044:5044
+   links:
+     - elasticsearch
+
+kibana:
+    image: kibana:latest
+    restart: always
+    ports:
+      - 5601:5601
+    links:
+      - elasticsearch
+
+curator:
+    build: curator
+    restart: always
+    links:
+      - elasticsearch
