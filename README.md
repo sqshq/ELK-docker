@@ -21,7 +21,7 @@ docker-compose up -d
 
 Keep track of your containers execution. For example, controll Curator scheduled tasks:
 ```
-docker-compose logs | grep curator
+docker-compose logs curator
 ```
 
 ## Notes
